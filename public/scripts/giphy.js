@@ -21,8 +21,9 @@ myApp.controller('GifController', function(GifService) {
       console.log('back in controller');
       vm.search = GifService.searchData;
       console.log('vm.search', vm.search);
+      searchTerm = '';
     }); //end get funciton
-    searchVal = " ";
+
   }; //end searchGif
 
 }); // end controller
