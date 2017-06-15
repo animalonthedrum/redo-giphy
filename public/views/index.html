@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <title>Redo Giphy</title>
+  <link rel="stylesheet" href="styles/styles.css">
+  <link rel="stylesheet" href="vendors/bootstrap.min.css">
+  <script src="vendors/angular.min.js" charset="utf-8"></script>
+  <script src="scripts/giphy.js" charset="utf-8"></script>
+  <script src="scripts/services/gif.service.js" charset="utf-8"></script>
+</head>
+
+<body ng-app="myApp">
+  <header class="jumbotron" class="container-fluid">
+    <h1>Gettin Some Gifs!</h1>
+  </header>
+
+  <div class="container" ng-controller="GifController as gc">
+    <section>
+      <button ng-click="gc.randomGif()" type="button" name="button" class="btn">Get Random Gif</button>
+      <div class="row">
+        <div class="col-md-4">
+          <img ng-src="{{gc.image.image_url}}">
+        </div>
+      </div>
+    </section>
+    <section>
+      <form class="" ng-submit="gc.searchGif(searchVal)">
+        <input type="text" name="" value="" ng-model="searchVal">
+        <input type="submit" name="" value="Submit" />
+      </form>
+
+      <div class="row">
+        <div class="col-md-4" ng-repeat="gif in gc.search">
+          <img ng-src="{{gif.images.fixed_width_downsampled.url}}">
+        </div>
+      </div>
+    </section>
+  </div>
+  <!-- end of controller -->
+</body>
+
+</html>

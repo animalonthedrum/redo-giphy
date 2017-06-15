@@ -1,6 +1,6 @@
 //requires
 var express = require('express');
-var app = ('express');
+var app = express();
 var bodyParser = require('body-parser');
 var path = require('path');
 var index = require('./modules/routes/index');
